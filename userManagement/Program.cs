@@ -1,11 +1,31 @@
 using userManagement.data;
+using userManagement.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
+// -------------------------------------------------------------inicio para pruebas de funcionamiento ---------------------
+/*
 dbConn conn = new dbConn();
-String query = "INSERT INTO public.users (first_name, last_name, username, email, password) VALUES('camilo','canaveral','camilo1234','camilo.lam93@gmail.com','camilo123456')  ";
+Muser user = new Muser()
+{
+    first_name = "Valentina",
+    last_name = "Pabon",
+    username = "Valhola123",
+    email = "email@email.com",
+    password = "bonito123",
+};
 //conn.openConn();
-conn.command(query, conn);
+//conn.newUser(user, conn);
+
+string[] features = { "first_name", "username" };
+string[] values = { "Alberto", "Pasada" };
+//conn.updateUser(1, features, values,conn);
+
+///conn.deleteUser(1, conn);
+conn.listUsers(conn);
+*/
+//-------------------------------------------------------------- fin para pruebas de funcionamiento ---------------------
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -23,7 +43,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

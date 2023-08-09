@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Text.Json;
+using userManagement.data;
 using userManagement.Models;
 
 namespace userManagement.Controllers
@@ -13,6 +15,7 @@ namespace userManagement.Controllers
             _logger = logger;
         }
 
+        // Views
         public IActionResult Index()
         {
             return View();
@@ -22,6 +25,32 @@ namespace userManagement.Controllers
         {
             return View();
         }
+
+
+
+        // requests
+
+        [HttpGet]
+        public JsonResult newUser( )
+        {
+
+            string response = "{\"msg\":1} ";
+
+            return Json(response);
+        }
+
+
+        [HttpGet]
+        public JsonResult showUsers()
+        {
+
+            List<string> userList = new List<string>();
+            dbConn conn = new dbConn();
+            userList = conn.listUsers(conn);
+
+            return Json(userList);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
