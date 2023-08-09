@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "M60AbhFhIXisFwb0yZD0UYB/4BBt9uDHSag/rvI6EOyQchYTIvvebrDlYjhGsORQ0Y91vPJDgsjvk/6lCqSkoQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\camil\\source\\repos\\userManagement\\userManagement\\userManagement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\camil\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\camil\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
+    "C:\\Users\\camil\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
