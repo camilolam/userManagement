@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -47,3 +47,256 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - userManagement</title>
+    </head>
+    <body >
+        <style> 
+            /* utilities */
+            html {
+                font-size:62.5%;
+                box-sizing:border-box;
+            }
+
+            * , *:before, *:after{
+                box-sizing:inherit;
+            }
+
+            body {
+                font-size:16px;
+            }
+
+            .container{
+                max-width:120rem;
+                margin:0 auto;
+            }
+
+        </style>
+   
+    
+       <main>
+            <div class="content container">
+                     <h2>Gestión de Usuarios</h2>
+
+                
+                        <div class="card">
+                            <div class="card-inputs">
+
+                                    <div class="field">
+                                        <input type="text" placeholder="Id" />
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" placeholder="Nombres" />
+                                     </div>
+
+                                    <div class="field">
+                                        
+                                            <input type="text" placeholder="Apellidos"/>
+                                    </div>
+
+                                    <div class="field">
+                                        
+                                            <input type="text" placeholder="Nombre de Usuario"/>
+                                    </div>
+
+                                    <div class="field">
+                                       
+                                            <input type="text" placeholder="Correo Electrónico"/>
+                                    </div>
+
+                                    <div class="field">
+                                      
+                                        <input type="password" placeholder="Contraseña" />
+                                    </div>
+
+                            </div>
+                            <div class="results">
+                                
+                                    <div class="main-menu">
+                                        <button class="btn" id="btn_new_user">Nuevo Usuario</button>
+                                        <button class="btn" id="btn_edit_user" >Editar Usuario</button>
+                                        <button class="btn" id="btn_delete_user">Eliminar Usuario</button>
+                                        <button class="btn" id="btn_show_users">Mostrar Registros</button>
+                                    </div>
+                                    <style>
+
+                                        .main-menu {
+                                            display: flex;
+                                          justify-content:space-around;
+                                            align-items: center;
+                                        }
+
+                                        .main-menu .btn {
+                                                padding: 1rem 3rem;
+                                               
+                                                color: black;
+                                                background-color:#a2a1a1;
+                                                border-radius:1rem;
+                                                margin-bottom:2rem;
+                                                border:none;
+                                          }
+
+                                        .main-menu .btn:hover {
+                                            transition:0.3s;
+                                            transform:scale(1.3);
+                                            background-color: #D6D7D7;
+                                        }
+
+
+
+                                    </style>
+                                
+                               <div class="bg-table">
+                                    <table class="result-table">
+                                        <tr>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Nombre de Usuario</th>
+                                            <th>Correo Electrónicos</th>
+
+                                            <th>Contraseña</th>
+                                        </tr>
+
+                                    </table>
+                               </div>
+                                <style>
+                                    .results {
+                                        margin-left: 2rem;
+                                   
+                                    }
+
+                                    .bg-table{
+                                        border-radius: 1rem;
+                                        height: 20rem;
+                                         background-color: #D6D7D7;
+                                    }
+                                    .result-table{
+                                         background-color: #a2a1a1;
+                                        border-radius: 1rem;
+                                    }                                
+                                    
+                                    .result-table th {
+                                        padding: 1rem 3rem;
+                                        border-right: 1px solid black;
+                                        
+                                    }
+
+                                        .result-table th:last-child {
+                                            border-right: none;
+                                        }
+
+                                </style>
+                          </div>
+                        </div>
+                        
+                        <style>
+                            .content{
+                                width:100%;
+                                text-align:center;
+                                display:flex;
+                                flex-direction:column;
+                                align-items:center;
+                            }
+
+                            
+
+                            .field{
+                                display:flex;
+                              flex-direction:column;
+                                text-align:left;
+                                margin-bottom: 1rem
+                            }
+
+                            .field input{
+                                border:none;
+                                border-radius:2rem;
+                                background-color:#d6d7d7;
+                                padding:1rem;
+                                margin-bottom: 0.5rem;
+                            }
+
+                            .field input:hover{
+                            transition: 0.3s;
+                            transform: scale(1.2);
+                            }
+
+                            .card{
+                                display:flex;
+                            }
+                     
+                        </style>
+
+            </div>
+       </main>
+       <footer class="footer">
+           <p>Desarrollado por Wilson Camilo Cañaveral Rodriguez </p>
+       </footer>
+
+       <style>
+           .footer{
+               text-align:center;
+               background-color:#343434;
+               color:white;
+              
+               position: absolute;
+               bottom:0;
+               width:100%;
+               left:0;
+               right:0;
+               
+           }
+       </style>
+
+
+    <script>
+        let btn_new_user = document.getElementById('btn_new_user');
+        let btn_edit_user = document.getElementById('btn_edit_user');
+        let btn_delete_user = document.getElementById('btn_delete_user');
+        let btn_show_users = document.getElementById('btn_show_users');
+
+        var  url = "@Url.Action("newUser","Home")";
+
+        btn_new_user.addEventListener('click', newUser);
+        btn_show_users.addEventListener('click', showUsers);
+
+        function newUser() {
+            alert("añadir nuevo usuario");
+            fetch("@Url.Action("newUser","Home")")
+           .then(function(res){
+               if(res.ok){
+                   res.json()
+                       .then(function (respuesta) {
+                           console.log(respuesta)
+                       })
+               }
+           })
+           
+        }
+
+        function showUsers() {
+            alert("mostrar datos");
+            fetch("@Url.Action("showUsers","Home")")
+                .then(function (res) {
+                    if (res.ok) {
+                        res.json()
+                            .then(function (respuesta) {
+                                foreach
+                                let resJson = JSON.parse(respuesta)
+                                console.log(respuesta)
+                            })
+                    }
+                })
+        }
+
+    </script>
+        
+    </body>
+</html>
+
+  

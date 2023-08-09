@@ -3,7 +3,7 @@ using userManagement.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 // -------------------------------------------------------------inicio para pruebas de funcionamiento ---------------------
-
+/*
 dbConn conn = new dbConn();
 Muser user = new Muser()
 {
@@ -22,7 +22,7 @@ string[] values = { "Alberto", "Pasada" };
 
 ///conn.deleteUser(1, conn);
 conn.listUsers(conn);
-
+*/
 //-------------------------------------------------------------- fin para pruebas de funcionamiento ---------------------
 
 
