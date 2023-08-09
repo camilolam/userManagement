@@ -31,3 +31,6 @@ C:\Users\camil\source\repos\userManagement\userManagement\obj\Debug\net6.0\refin
 C:\Users\camil\source\repos\userManagement\userManagement\obj\Debug\net6.0\userManagement.pdb
 C:\Users\camil\source\repos\userManagement\userManagement\obj\Debug\net6.0\userManagement.genruntimeconfig.cache
 C:\Users\camil\source\repos\userManagement\userManagement\obj\Debug\net6.0\ref\userManagement.dll
+C:\Users\camil\source\repos\userManagement\userManagement\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\camil\source\repos\userManagement\userManagement\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\camil\source\repos\userManagement\userManagement\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

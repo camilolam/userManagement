@@ -43,6 +43,10 @@
             "Npgsql": {
               "target": "Package",
               "version": "[7.0.4, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[7.0.3, )"
             }
           },
           "imports": [
